@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preparación Hidro A+B</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="theme-dark">
+  <header class="sub-header">
+    <a class="btn" href="../index.html">⬅️ Volver</a>
+    <h1>🌱 Preparación — Hidro A+B</h1>
+  </header>
+
+  <main class="container narrow">
+    <div class="card">
+      <h2>Calculadora de Volumen y Dosis</h2>
+      <p>Ingresa las dimensiones del mesón y la altura de agua (recomendado 12 cm).</p>
+      <form id="calcForm" class="grid">
+        <label>Largo (m)
+          <input type="number" step="0.01" id="largo" value="1.20" required>
+        </label>
+        <label>Ancho (m)
+          <input type="number" step="0.01" id="ancho" value="0.57" required>
+        </label>
+        <label>Altura de agua (m)
+          <input type="number" step="0.01" id="alto" value="0.12" required>
+        </label>
+        <label>N° de mesones
+          <input type="number" id="nMesones" value="2" min="1" required>
+        </label>
+        <button type="submit" class="btn primary">🧮 Calcular</button>
+      </form>
+      <div id="resultados" class="results"></div>
+    </div>
+
+    <div class="card">
+      <h2>Instrucciones base del producto</h2>
+      <p>Para 200 L: disolver <strong>1 L de Hidro A</strong> + <strong>1 L de Hidro B</strong> en ~150 L de agua, luego completar a 200 L.</p>
+      <ul>
+        <li>pH objetivo: <strong>5.8 – 6.2</strong></li>
+        <li>CE objetivo: <strong>1.2 – 1.4 mS/cm</strong> (lechuga)</li>
+        <li>Temperatura del agua: <strong>18 – 22 °C</strong></li>
+      </ul>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('calcForm');
+    const out = document.getElementById('resultados');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const L = parseFloat(largo.value || 0);
+      const A = parseFloat(ancho.value || 0);
+      const H = parseFloat(alto.value || 0);
+      const N = parseInt(nMesones.value || 1, 10);
+      const volumen_m3 = L * A * H * N;
+      const litros = Math.round(volumen_m3 * 1000);
+      // Regla del producto: 200 L usan 1 L A + 1 L B
+      const factor = litros / 200;
+      const a_ml = Math.round(1000 * factor);
+      const b_ml = Math.round(1000 * factor);
+      const agua_base = Math.round(150 * factor);
+      out.innerHTML = `
+        <div class="callout">
+          <p>Volumen total: <strong>${litros} L</strong></p>
+          <p>Hidro A: <strong>${a_ml} mL</strong> · Hidro B: <strong>${b_ml} mL</strong></p>
+          <p>Agua inicial: <strong>${agua_base} L</strong> → luego completa hasta <strong>${litros} L</strong></p>
+        </div>`;
+      window.speechSynthesis?.speak(new SpeechSynthesisUtterance(`Volumen total ${litros} litros. Agrega ${a_ml} mililitros de Hidro A y ${b_ml} mililitros de Hidro B.`));
+    });
+  </script>
+</body>
+</html>

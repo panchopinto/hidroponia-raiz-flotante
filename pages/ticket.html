@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ticket de salida</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    @media print {
+      .no-print { display:none; }
+      body { background:#fff !important; color:#000; }
+      .card { box-shadow:none; }
+    }
+  </style>
+</head>
+<body class="theme-dark">
+  <header class="sub-header no-print">
+    <a class="btn" href="../index.html">⬅️ Volver</a>
+    <h1>🎟️ Ticket de salida</h1>
+    <button class="btn" onclick="window.print()">🖨️ Imprimir / PDF</button>
+  </header>
+
+  <main class="container narrow">
+    <div class="card">
+      <h2>Reflexiona</h2>
+      <label>1) ¿Qué aprendí hoy?
+        <textarea rows="3"></textarea>
+      </label>
+      <label>2) ¿Qué haría diferente la próxima vez?
+        <textarea rows="3"></textarea>
+      </label>
+      <label>3) ¿Qué concepto me quedó confuso?
+        <textarea rows="3"></textarea>
+      </label>
+      <label>4) ¿Qué dato medimos que me pareció clave (pH, CE o temperatura)?
+        <textarea rows="2"></textarea>
+      </label>
+      <p class="muted">Sugerencia: adjunta tu registro en Sheets al entregar.</p>
+    </div>
+  </main>
+</body>
+</html>

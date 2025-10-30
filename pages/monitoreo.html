@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monitoreo pH/CE/Temperatura</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="theme-dark">
+  <header class="sub-header">
+    <a class="btn" href="../index.html">⬅️ Volver</a>
+    <h1>💧 Monitoreo</h1>
+  </header>
+
+  <main class="container narrow">
+    <div class="card">
+      <h2>Registro diario</h2>
+      <form id="monForm" class="grid">
+        <label>Fecha
+          <input type="date" id="fecha" required>
+        </label>
+        <label>pH
+          <input type="number" step="0.01" id="ph" placeholder="pH (5.8–6.2)" required>
+        </label>
+        <label>CE (mS/cm)
+          <input type="number" step="0.01" id="ce" placeholder="CE (1.2–1.4)" required>
+        </label>
+        <label>Temperatura (°C)
+          <input type="number" step="0.1" id="temp" placeholder="18–22 °C" required>
+        </label>
+        <label>Observaciones
+          <input type="text" id="obs" placeholder="Raíces, hojas, ajustes...">
+        </label>
+        <div class="row">
+          <button type="submit" class="btn primary">📤 Enviar a Sheets</button>
+          <button type="button" id="exportCSV" class="btn">📥 Exportar CSV</button>
+        </div>
+      </form>
+      <p id="status" role="status" aria-live="polite"></p>
+    </div>
+  </main>
+
+  <script src="../assets/js/sheets.js"></script>
+</body>
+</html>

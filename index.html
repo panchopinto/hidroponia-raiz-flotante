@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hidroponía Raíz Flotante</title>
+  <meta name="theme-color" content="#0b1114">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="theme-dark">
+  <canvas id="bubbles" aria-hidden="true"></canvas>
+
+  <header class="app-header" role="banner">
+    <div class="brand">
+      <span class="logo">💧</span>
+      <h1>Hidroponía — Raíz Flotante</h1>
+    </div>
+    <nav class="controls" aria-label="Controles de inclusión">
+      <button id="voiceBtn" class="btn ghost" aria-label="Narrador" title="Narrador 🗣️">🗣️</button>
+      <div class="contrast-wrap">
+        <button id="contrastBtn" class="btn ghost" aria-expanded="false" aria-controls="contrastMenu" title="Contraste">🌓</button>
+        <div id="contrastMenu" class="menu hidden" role="menu" aria-label="Cambiar contraste">
+          <button class="menu-item" data-theme="light" role="menuitem">☀️ Claro</button>
+          <button class="menu-item" data-theme="dark" role="menuitem">🌙 Oscuro</button>
+          <button class="menu-item" data-theme="high" role="menuitem">⚡ Alto contraste</button>
+          <button class="menu-item" data-theme="sepia" role="menuitem">📜 Sepia</button>
+        </div>
+      </div>
+      <div class="font-controls" aria-label="Tamaño de fuente">
+        <button id="fontMinus" class="btn ghost" title="Reducir tamaño">A−</button>
+        <button id="fontPlus" class="btn ghost" title="Aumentar tamaño">A+</button>
+      </div>
+      <button id="fxToggle" class="btn ghost" title="Animación de burbujas">💠</button>
+      <button id="installBtn" class="btn primary" hidden>⬇️ Instalar</button>
+    </nav>
+  </header>
+
+  <main class="container" role="main">
+    <section class="cards">
+      <a class="card pulse" href="pages/preparacion.html" aria-label="Preparación de solución Hidro A+B">
+        <div class="emoji">🌱</div>
+        <h2>Preparación</h2>
+        <p>Calculadora de volumen y dosis Hidro A+B.</p>
+      </a>
+
+      <a class="card pulse" href="pages/monitoreo.html" aria-label="Monitoreo de pH, CE y temperatura">
+        <div class="emoji">💧</div>
+        <h2>Monitoreo</h2>
+        <p>Registra pH, CE, temperatura y observaciones.</p>
+      </a>
+
+      <a class="card pulse" href="pages/dashboard.html" aria-label="Dashboard">
+        <div class="emoji">📊</div>
+        <h2>Dashboard</h2>
+        <p>Gráficos de pH, CE y temperatura (demo + Sheets).</p>
+      </a>
+
+      <a class="card pulse" href="pages/modelos.html" aria-label="Modelos 3D, AR y VR">
+        <div class="emoji">👁️</div>
+        <h2>3D / AR / VR</h2>
+        <p>Visores interactivos del sistema.</p>
+      </a>
+
+      <a class="card pulse" href="quiz/quiz.html" aria-label="Quiz de Hidroponía">
+        <div class="emoji">🧪</div>
+        <h2>Quiz</h2>
+        <p>Chequeo rápido de conceptos clave.</p>
+      </a>
+
+      <a class="card pulse" href="pages/ticket.html" aria-label="Ticket de salida">
+        <div class="emoji">🎟️</div>
+        <h2>Ticket</h2>
+        <p>Metacognición y cierre de la clase.</p>
+      </a>
+
+      <a class="card pulse" href="pages/guias.html" aria-label="Guías docente y estudiante">
+        <div class="emoji">📄</div>
+        <h2>Guías</h2>
+        <p>Material descargable para la clase.</p>
+      </a>
+    </section>
+  </main>
+
+  <footer class="app-footer" role="contentinfo">
+    <p>
+      <a href="mailto:belen.acpe@gmail.com">belen.acpe@gmail.com</a> · 📞 +56 9 6266 4960<br>
+      👨‍💻 <a href="mailto:franciscoandresp@gmail.com">Francisco Pinto</a> · 📞 +56 9 2002 7992<br>
+      Hecho con ❤️ para el Liceo Bicentenario de Excelencia Polivalente San Nicolás<br>
+      Proyecto Educativo — 👁️ vista 3D 📱 Realidad Aumentada 🥽 Realidad Virtual
+    </p>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

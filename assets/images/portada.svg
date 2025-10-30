@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#0b1114"/><stop offset="1" stop-color="#102027"/></linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#g)"/>
+  <text x="80" y="180" fill="#2bd48a" font-size="72" font-family="Arial Black">Hidroponía — Raíz Flotante</text>
+  <text x="80" y="260" fill="#9fb7c0" font-size="36" font-family="Arial">Lechugas milanesa · pH 5.8–6.2 · CE 1.2–1.4 mS/cm</text>
+  <circle cx="1000" cy="160" r="120" fill="#23a6f0" opacity=".15"/>
+  <circle cx="1040" cy="220" r="70" fill="#2bd48a" opacity=".2"/>
+</svg>
